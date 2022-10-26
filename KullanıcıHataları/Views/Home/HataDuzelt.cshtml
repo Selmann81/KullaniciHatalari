@@ -1,0 +1,49 @@
+﻿@model EntityLayer.Concrete.Hatalar
+
+@{
+    ViewData["Title"] = "HataDuzelt";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>HataDuzelt</h1>
+
+<h4>Hatalar</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="HataDuzelt" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="HataBaslik" class="control-label"></label>
+                <input asp-for="HataBaslik" class="form-control" />
+                <span asp-validation-for="HataBaslik" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hataİcerik" class="control-label"></label>
+                <input asp-for="Hataİcerik" class="form-control" />
+                <span asp-validation-for="Hataİcerik" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HataCozum" class="control-label"></label>
+                <input asp-for="HataCozum" class="form-control" />
+                <span asp-validation-for="HataCozum" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="HataBitti" /> @Html.DisplayNameFor(model => model.HataBitti)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="HataId" class="form-control" />
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-warning"><i class="fas fa-chevron-circle-left"></i></a>
+
+    @*<a href="~/home/hataduzelt/@item.HataId" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>*@
+</div>
+
